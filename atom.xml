@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://angelashaby.github.io/"/>
-  <updated>2018-06-21T05:48:44.054Z</updated>
+  <updated>2018-06-21T05:52:05.806Z</updated>
   <id>http://angelashaby.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>PRD速查清单</title>
+    <link href="http://angelashaby.github.io/2018/02/20/PRD%E9%80%9F%E6%9F%A5%E6%B8%85%E5%8D%95/"/>
+    <id>http://angelashaby.github.io/2018/02/20/PRD速查清单/</id>
+    <published>2018-02-19T16:00:00.000Z</published>
+    <updated>2018-06-21T05:52:05.806Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://upload-images.jianshu.io/upload_images/1289421-4b9e3ef8c8e86784.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p><p>之前做项目都是敏捷开发，只在交互稿旁边贴上交互说明，项目发展比较稳定后才慢慢补上PRD，写完后发现自己以前有些真的没考虑全面，写文档也是自我反省的过程。最近专门去学习整理了很多大佬的文章，为以后写PRD提供速查清单。</p><p>#1文档综述</p><p>##1.1PRD输出环境<br>交代文档和产品信息，方便为迭代做标记。<br>•    文档状态、产品版本、文档编号、编写人、编写日期。<br><img src="http://upload-images.jianshu.io/upload_images/1289421-c21a336aeb2fa2cc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p><p>##1.2修订记录<br>方便读者快速定位每次迭代的修改点。<br>•    版本号、修订人、修订日期、修订描述。<br><img src="http://upload-images.jianshu.io/upload_images/1289421-f320716b217a8164.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p><p>##1.3文档介绍</p><p>###1.3.1目的</p><ul><li><strong>前期有助查漏补缺。</strong>原型图有利于走通流程，可视化展现需求点，而产品文档更加关注产品细节和规则，其实我觉得<a href="http://www.woshipm.com/rp/379949.html" target="_blank" rel="noopener">产品一体化文档</a>的可读性更高，但是人们大多认为写在原型上的产品文档不叫PRD······</li><li><strong>中期降低沟通成本。</strong>产品经理将自己的要求写在文档中，对于多方合作的项目，可以大大降低沟通成本。</li><li><strong>后期方便工作存档。</strong>在工作交接中，一份完整的产品文档可以让接手的人快速全面了解项目。</li></ul><p>###1.3.2范围<br>这篇文档为谁而写，不同角色想从文档中获取什么信息，则是需求文档要展现的内容。</p><ul><li><p>交互设计师：设计交互细节，评估用户体验。</p></li><li><p>UI设计师：设计具体样式，规范界面设计。</p></li><li><p>项目经理：安排开发人员，进行开发排期。</p></li><li><p>开发：明确开发内容，评估工作量。</p></li><li><p>测试：建立测试用例，验收产品依据</p></li></ul><p>###1.3.3名词解释<br>对于产品中专业名词的解释，方便大家沟通中名词的统一，产品经理没有定义，大家各说各的容易混淆。而且对名词解释方便大家理解业务，图文并茂最佳。可以戳此<a href="https://help.aliyun.com/document_detail/30257.html?spm=a2c4g.11174283.6.541.JiEOzZ" target="_blank" rel="noopener">示例</a>查看</p><p>#2产品概述</p><p>##2.1产品介绍<br>对产品进行介绍，也是让各方了解我们产品的整体形态以及未来规划。</p><p>##2.2功能架构图<br>基于产品的逻辑及表现形式,结构化表现产品各个功能模块的 一种示意图。</p><p>##2.3信息架构图<br>用于表现产品的所有信息内容及内容分类的一种示意图。</p><p>##2.4交互流程图<br>表达是执行逻辑的路径，通俗地将是当用户点击某个按钮之后，程序执行命令的顺序。</p><p>##2.5业务流程图<br>一种描述管理系统内各单位、人员之间的业务关系，作业顺序和管理信息流向的示意图。</p><p>##2.6功能模块<br><img src="http://upload-images.jianshu.io/upload_images/1289421-63eef6126ac302b6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p><p>##2.7全局说明<br>•    功能权限：登录、未登录；<br>•    状态：未选中、悬停、选中、幽灵；<br>•    反馈：<br>（1）提示信息：成功、失败、警告、通知、帮助；<br>（2）过程反馈：加载状态进度反馈、录入反馈；<br>（3）反馈方式：顶部全局提示反馈、对话框、气泡卡片、文字提示、徽标数；<br>（4）反馈效果：反馈动画、反馈时间；</p><p>#3详细功能</p><p>##3.1页面介绍<br>•    用户场景<br>•    功能描述<br>•    优先级<br>•    输入/前置条件：不同方式和不同身份进入该页面<br>•    需求描述<br>•    输出/后置条件：不同方式和不同身份退出该页面<br>•    补充说明<br><img src="http://upload-images.jianshu.io/upload_images/1289421-3af5dc5aed141a6d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p><p>##3.2处理规则</p><p>###3.2.1显示机制<br>•    内容来源：产品中某界面、标准字典表（需要产品或需求方提供）<br>•    内容数量<br>•    数据极限值：超出服务器性能的最大条数、影响展示效果的最大条数<br>•    文字极限值：换行、省略<br>•    展示范围：全量展示、分页显示<br>•    状态显示：空值、默认<br>•    计量单位：时间单位、货币单位</p><p>###3.2.2排序机制<br>•    排序规则：综合、按热度、按时间、按价格、按销量、按评分、按距离<br>•    排序更新频率：实时更新、定时更新</p><p>###3.2.3输入机制<br>•    数据类型：布尔型、数值型、文本型<br>•    状态显示：空值、默认值<br>•    是否必填<br>•    是否限制内容：数字、字母、特殊符号<br>•    是否限制长度<br>•    是否校验唯一性<br>•    是否限制多次提交<br>•    刷新数据是否还在</p><p>###3.2.4加载机制<br>•    加载数量<br>•    加载方式：手动加载、自动加载（再次进入该页面、定时加载）<br>•    状态显示：默认（整个页面、文字图片视频）、加载中、加载后、加载不出更多</p><p>###3.2.5缓存机制<br>•    缓存对象<br>•    缓存数量<br>•    缓存位置：客户端、服务端<br>•    清理缓存：手动清理、自动清理</p><p>###3.2.6推送机制<br>•    推送对象<br>•    推送内容<br>•    推送频率：实时推送、定时推送<br>•    点击推送跳转：正常跳转、异常跳转（页面不存在、页面无法访问）</p><p>###3.2.7搜索机制<br>•    搜索对象：全局、部分字段<br>•    搜索精度：精确搜索、模糊搜索<br>•    搜索效率：实时搜索、点击搜索<br>•    支持缩写：拼音首字母、大小写</p><p>###3.2.8删除机制<br>•    删除方式：物理删除（数据库层面彻底删除）、逻辑删除（表现层暂时删除）<br>•    依赖条件：前置条件、后置影响</p><p>##3.3数据规则<br>•    取数规则：数据库表、所取字段、关联方式、主键、索引<br>•    时间规则：统计范围<br>•    计算规则：字段、计算公式</p><p>##3.4操作控件</p><p>###3.4.1触发源<br>•    触发时机：何时显示、何时隐藏<br>•    触发区域<br>•    触发形式：点击、拖动<br>•    触发频率</p><p>###3.4.2触发时<br>•    加载<br>•    读取<br>•    缓冲</p><p>###3.4.3触发后<br>•    操作进度显示<br>•    按钮发生变化<br>•    结果提示</p><p>##3.5异常情况</p><p>###3.5.1中断操作<br>•    中断类型：<br>（1）退至后台运行：继续原来的页面<br>（2）异常关闭、闪退、崩溃：启动页<br>（3）通知：不处理<br>•    造成影响：数据变化、页面跳转<br>•    应对措施：是否提示、是否备份</p><p>###3.5.2网络情况<br>•    没网络、网络不良、网络超时</p><p>###3.5.3账号相关<br>•    未登录<br>•    是否互斥：不同设备、不同浏览器、相同浏览器不同窗口、相同浏览器相同窗口不同标签页</p><p>###3.5.4版本相关<br>•    命名规范、是否强制更新、是否影响老版本</p><p>#4非功能性需求</p><p>##4.1数据需求<br>•    埋点：模块、页面、页面分级、需记录数据<br>•    事件：页面、事件名称、事件ID、版本、自定义label、自定义时间参数、分类<br><img src="http://upload-images.jianshu.io/upload_images/1289421-909a7aa1e8d5df01.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p><p>##4.2性能需求<br>•    模块、发生场景、成功率、响应时间、并发数、说明<br><img src="http://upload-images.jianshu.io/upload_images/1289421-3d67bd4071707976.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p><p>##4.3兼容性需求<br>•    设备、浏览器、版本号、应用、低版本兼容性<br><img src="http://upload-images.jianshu.io/upload_images/1289421-44f316b4b236cc06.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p><p>##4.4服务需求<br>•    服务事件、服务频率、场景描述、解决方案、协助类型、需要协助方、服务成本<br>•    协助类型：客服、营销、法务、财务<br><img src="http://upload-images.jianshu.io/upload_images/1289421-d1fde3c3e3f9776d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p><p>##4.5帮助需求<br>•    FAQ、帮助文档</p><p>##4.6风险描述<br>•    风险事件、风险来源、关联责任方、解决方案<br><img src="http://upload-images.jianshu.io/upload_images/1289421-3d37a4bc2affe140.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p><p>#5文档要求<br>•    标准：对业务名词的定义要统一，不然大家都是不同的口径。<br>•    规整：就像开发的代码要遵循代码规范一样，产品的PRD也要排版规整。<br>•    简洁：用最精炼的语言去表达重点。<br>•    易读：尽量使用可视化的方法，比如流程图，因为一图胜千言。<br>•    全面：功能描述全面，避免含糊不清的表述给开发造成误解，引起返工。</p><p>####参考资料<br><a href="http://www.woshipm.com/pmd/834218.html" target="_blank" rel="noopener">产品经理整理PRD时，需要注意哪些点</a></p><p><a href="http://www.woshipm.com/rp/853599.html" target="_blank" rel="noopener">倒推“饿了么”App产品需求文档（PRD）</a></p><p><a href="http://www.woshipm.com/pmd/561615.html" target="_blank" rel="noopener">我的三年产品基本功（PRD）｜将交互、业务逻辑、需求字段撰入文档</a></p><p><a href="http://www.woshipm.com/rp/774034.html" target="_blank" rel="noopener">一份靠谱的PRD文档，需要注重哪些细节？</a></p><p><a href="http://www.woshipm.com/pmd/276617.html" target="_blank" rel="noopener">写PRD怎样思考的更加全面</a></p><blockquote><p><strong>重点！<a href="https://mubu.com/doc/3fAlHWNWlF" target="_blank" rel="noopener">速查清单地址请戳此</a></strong></p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/1289421-4b9e3ef8c8e86784.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; 
+      
+    
+    </summary>
+    
+      <category term="design" scheme="http://angelashaby.github.io/categories/design/"/>
+    
+    
+      <category term="产品文档" scheme="http://angelashaby.github.io/tags/%E4%BA%A7%E5%93%81%E6%96%87%E6%A1%A3/"/>
+    
+  </entry>
   
   <entry>
     <title>需求实战：PM如何快速培养思维的严谨性</title>
