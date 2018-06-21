@@ -1,0 +1,115 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description"><title>数据表格设计┃从功能、交互和UI进行全方位分析 | idatadesign</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/normalize/8.0.0/normalize.min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/grids-responsive-min.css"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><link rel="alternate" type="application/atom+xml" href="/atom.xml"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">数据表格设计┃从功能、交互和UI进行全方位分析</h1><a id="logo" href="/.">idatadesign</a><p class="description"></p></div><div id="nav-menu"><a class="current" href="/."><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a><a href="/atom.xml"><i class="fa fa-rss"> 订阅</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">数据表格设计┃从功能、交互和UI进行全方位分析</h1><div class="post-meta">Jul 9, 2017<span> | </span><span class="category"><a href="/categories/design/">design</a></span></div><a class="disqus-comment-count" data-disqus-identifier="2017/07/09/数据表格设计┃从功能、交互和UI进行全方位分析/" href="/2017/07/09/数据表格设计┃从功能、交互和UI进行全方位分析/#disqus_thread"></a><div class="post-content"><p><img src="http://upload-images.jianshu.io/upload_images/1289421-b7015c98df040665.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<blockquote>
+<p>将近一年浸泡在设计数据表格的相关需求中，踩过很多坑。深深地体会到建立完整的知识体系的重要性，不然就是这个坑踩着上一个坑，万劫不复。在这里总结分享自己的经验，助各位完美避开各种坑。</p>
+</blockquote>
+<p>我将从功能、交互、UI三个维度对表格设计进行全方位总结分析。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1289421-ea14d6939da66983.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>####前言<br>表格，又称为表，既是一种可视化交流模式，又是一种组织整理数据的手段。人们在通讯交流、科学研究以及数据分析活动当中广泛采用着形形色色的表格。表的结构如下图：</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1289421-9320674e0a8cb582.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>那表格的使用场景：</p>
+<ul>
+<li><strong>展现信息全面性。</strong>很多图表类型无法展示数据特点。表格无疑是组织大量信息通用性最高的一种表达方式，既可陈列信息，又可以表达信息之间的关系。</li>
+<li><strong>编辑性大于易读性。</strong>需要对数据进行增删改查。</li>
+<li><strong>需要对比数据。</strong>比如对比行与行之间的数据，了解两者差异。</li>
+</ul>
+<p>一个简简单单的表格功能其实非常强大，也是非常复杂的。但是不管怎么样，我们不变的原则是：</p>
+<ul>
+<li><strong>更直观地对比。</strong>通过交互和视觉对冗杂的信息进行优化，从而更直观形象地对比。比如隔行使用斑马线增强横向导视。</li>
+<li><strong>更精准地计算。</strong>对于大数据量的表格，数据的精准度非常重要。比如根据提供的精准度要求，定义展示数据的小数位数。</li>
+<li><strong>更快速地决策。</strong>比如在行列末尾增加汇总信息（总计或平均值），在每个分类里增加小计，可以让管理者一目了然地了解数据，快速决策。</li>
+</ul>
+<p>####功能</p>
+<ul>
+<li><p>添加数据。用户在原有的表结构中，增加一行数据。<br><img src="http://upload-images.jianshu.io/upload_images/1289421-6d40b29141784918.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+</li>
+<li><p>导出数据。根据业务对数据精准度的需求，定义一个导出规则。<br>1.不保留数据格式化。比如该数值有五位小数，导入我们系统格式化为两位小数，这种方式导出后还是五位小数。<br>2.保留数据格式化。比如该数值有五位小数，导入我们系统格式化为两位小数，这种方式导出后还是两位小数。</p>
+</li>
+<li><p>显示字段。列数过多时，可以隐藏重要性低的列，更好的突出重要性高的列，主次分明，减少干扰。<br><img src="http://upload-images.jianshu.io/upload_images/1289421-c0bd06ae061bf145.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+</li>
+<li><p>搜索和筛选。按预定目标过滤出某种具有特定性质的数据的操作过程，帮助我们实现对信息的快速分析。<br><img src="http://upload-images.jianshu.io/upload_images/1289421-cd1b87ac81ae21ea.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>1.简易搜索。适合筛选条件不明确和筛选频率不高的表格。尽量采用模糊搜索，降低操作成本。<br>优点：灵活选择关键词，节省空间。<br>缺点：可筛选信息不明显。<br>2.高级筛选器。适合筛选条件明确和筛选频率高的表格。<br>优点：曝光度高，操作成本低。<br>缺点：占用空间大，不易扩展。<br>3.组合筛选器。适合筛选条件不明确但筛选频率高的表格。<br>优点：主次分明，搜索框可满足大部分用户需求，更高的要求有较深的入口，减少干扰。<br>缺点：如果搜索不能满足大部分用户需求而需要高级筛选，必然增加了用户的操作步骤。<br>4.列筛选器。适合筛选条件单一的表格。<br>优点：筛选当前列，更直观。<br>缺点：只能选择单列筛选。</p>
+</li>
+<li><p>排序。设置查看数据优先级顺序，快速发掘最关注的信息。<br><img src="http://upload-images.jianshu.io/upload_images/1289421-8ea2018aac8f4bc1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>1.文本排序。以首字母A-Z规则进行升序或降序。<br>2.数值排序。以数值大小规则进行升序或降序。</p>
+</li>
+<li><p>汇总信息。在原始数据上增加汇总信息（合计值或平均值），可以减少用户的计算，达到快速决策的目的。<br><img src="http://upload-images.jianshu.io/upload_images/1289421-09355750d7d3ef4c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>1.行总计和行小计。在每个汇总类别的左侧或右侧增加一条总计列。<br>2.列总计和列小计。在每个汇总类别的顶部或底部增加一条总计行。如上图。</p>
+</li>
+<li><p>加载方式。避免全部铺开大量信息而影响页面的加载速度，影响用户体验。<br><img src="http://upload-images.jianshu.io/upload_images/1289421-d7c23b33f29edd30.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>1.复杂分页条。可以设置每页显示条数，适合大数据量。<br>优点：用户不仅对于数据量有宏观上的把握，还可以灵活设置每页显示条数。<br>缺点：分页条占用空间大。<br>2.简单分页条。不可以设置每页显示条数，适合较大数据量。<br>优点：用户对于数据量有宏观上的把握。<br>缺点：分页条占用空间较大。<br>3.加载更多。适合小数据量。<br>优点：节省空间，沉浸式阅览。<br>缺点：对数据量难以把握，操作不灵活。</p>
+</li>
+</ul>
+<p>####交互</p>
+<ul>
+<li><p>固定行列。根据7±2的原则，随着行列数增加，如果表头不固定，超负荷记忆信息会使用户遗忘信息。<br><img src="http://upload-images.jianshu.io/upload_images/1289421-c2c949d676d38b56.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>1.固定行。行数过多，出现纵向滚动条时，用户需要了解行中每个数据对应的列字段名。<br>2.固定列。列数过多，出现横向滚动条时，用户需要了解列中每个数据对应的行字段名。</p>
+</li>
+<li><p>批量操作。批量选择记录进行操作。<br><img src="http://upload-images.jianshu.io/upload_images/1289421-8f57e5d01f34d594.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>1.记录条数。适用于所选数据较多，不重要的数据。<br>优点：节省空间，直观了解所选条数。<br>缺点：无法直观查看所选项。<br>2.记录所选项。适用于所选数据较少，重要的数据。<br>优点：可以直观查看所选项。<br>缺点：占用空间，无法直观了解所选条数。</p>
+</li>
+<li><p>查看详情。创建信息层级，只展现核心内容，非重点内容需要用户通过更深的入口查看。主次分明地展示信息，方便用户快速定位所需信息。<br><img src="http://upload-images.jianshu.io/upload_images/1289421-895f43d2c9c82f37.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>1.跳转。把 ID、名称等唯一性标志的指加上超链接，点击可以查看该条记录的详情。<br>2.查看。在操作列中增加“查看”功能，点击可以查看该条记录的详情。</p>
+</li>
+<li><p>编辑。对表格内容进行编辑。<br><img src="http://upload-images.jianshu.io/upload_images/1289421-9cf8104b036712c5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>1.直接编辑。点击内容直接编辑，适合易编辑性大于易读性的数据。<br>优点：编辑时不影响查看其他内容。<br>缺点：编辑空间有限，不适合编辑内容较多的数据。<br>2.悬浮层编辑。点击单元格的“编辑”按钮，编辑该项内容。<br>优点：编辑空间较大，编辑内容的自由度比直接编辑高一点。<br>缺点：遮挡部分界面，无法看到上下文。<br>3.弹窗编辑。点击操作列的“编辑”按钮，弹出编辑窗口。<br>优点：聚焦操作，可编辑内容多的数据。<br>缺点：遮挡全部页面，无法看到其他内容。</p>
+</li>
+<li><p>反馈。鼠标悬停高亮底色，使得该行与行界限分明。强化了横向导视，解决列数过多引起数据错行的问题。<br><img src="http://upload-images.jianshu.io/upload_images/1289421-4bc9ee801db58f84.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+</li>
+<li><p>精简表头。简明扼要的列名可以节省表头空间，避免“头重脚轻”的表格布局。<br><img src="http://upload-images.jianshu.io/upload_images/1289421-f527e4c3dccb5866.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+</li>
+<li><p>显示长内容。当前页面信息无法展示完全。<br><img src="http://upload-images.jianshu.io/upload_images/1289421-7eec495dad9b9e2b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>1..浮层查看。适合查看较少内容。<br>优点：灵活查看内容，操作成本低。<br>缺点：影响查看其他内容。<br>2.下拉查看。适合查看较多内容。<br>优点：不影响查看其他内容。<br>缺点：不能灵活查看内容，操作成本高。</p>
+</li>
+<li><p>空单元格。要避免空单元格会给用户带来困惑，是零值还是空值呢？<br>1.数据为零值，则单元格显示为0，而且数据格式（小数位数等）要与同列数据相同处理，方便与其他数据进行计算。<br>2.数据为空值，则单元格显示为短横线“-”，表示空值。</p>
+</li>
+<li><p>数据格式化。绝对精确的数据影响人们的阅读。我们可以根据客户需求和场景决定数据精确度范围。<br><img src="http://upload-images.jianshu.io/upload_images/1289421-08b65b0b381d5c9e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>1.显示为数值，设置小数位数，千分位和数值单位（比如万）等。<br>2.显示为百分比，设置小数位数。</p>
+</li>
+<li><p>对齐规范。信息更加规整，方便对比同列数据，提高阅读速度。<br><img src="http://upload-images.jianshu.io/upload_images/1289421-8cb702e869ebb696.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>1.文本左对齐。符合从左到右的阅读文字习惯。<br>2.数值右对齐。符合从右到左的对比数字习惯。有小数点按小数点对齐。可以方便用户进行心算，不需要转换阅读思维。<br>3.固定操作按钮居中。<br>4.表头与信息内容一致。（视情况而定，比如笔者设计的表格要考虑交叉表，选择了表头居中，交叉表的定义请看“复杂表格-交叉表”部分。）<br>由于交叉表会在数值上套上好几层表头，所以下图错误示例中页面重量往右下角拉扯，造成页面不平衡，而且这个情况会随着套的表头层数越来越严重，所以我们选择了统一所有表头居中。<br><img src="http://upload-images.jianshu.io/upload_images/1289421-fda85a93509c917c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+</li>
+</ul>
+<p>####UI</p>
+<ul>
+<li>信息可视化。视觉元素能提高阅读速度。<br><img src="http://upload-images.jianshu.io/upload_images/1289421-45c5b4d371b9bae0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>1.状态显示。根据“7±2”原则，状态个数不能太多，不然人的记忆负担超负荷会适得其反。<br>2.告警显示。超出阈值需要突出显示，提醒用户超标。<br>3.变动显示。比如同步环比的正负值。<br>4.感受显示。有些表达用户的感官评价，用icon更符合用户的心智模型，比如“满意”用笑脸icon，“不满意”用苦脸icon，总比用文字阐述直观吧。</li>
+</ul>
+<ul>
+<li><p>构建F型视觉流。通过视觉重量和视觉方向的组合来引导用户查看信息的轨迹。<br><img src="http://upload-images.jianshu.io/upload_images/1289421-7e09c22599183275.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>1.突出表头。<br>2.突出汇总信息。<br>3.增加合适的对比度，区分行与行之间的数据。</p>
+</li>
+<li><p>打造页面呼吸感。有利于控制用户的阅读速度，做到张弛有度，好像正在“呼吸”。避免大量信息毫无差异的堆积，从而使用户在阅读时视觉疲劳。<br><img src="http://upload-images.jianshu.io/upload_images/1289421-ec18bf68213c52ac.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>1.网格。通过物理实线割据内容。<br>优点：更加直观，节省空间。<br>缺点：物理割据显得不自然流畅。<br>1）强调行。隐藏了纵向的线，不强调同列数据的上下对比，更加关注同条记录的阅读。<br>2）强调列。隐藏了横向的线，不强调同行数据的左右对比，更加关注同个属性的对比。<br>3）强调组。隐藏了同组的线，不强调同行和同列数据的对比，更加关注同组数据的对比。<br>2.斑马线。通过填充底色割据内容。<br>优点：在大量数据的表格中可以引导用户的视觉。<br>缺点：在少量数据的表格中运用斑马线设计，用户可能会对高亮显示行产生困惑。<br>3.留白。通过加大留白区域割据内容。<br>优点：舒适自然，阅读流畅。<br>缺点：留白区域不好控制，太小达不到效果，太大浪费空间。</p>
+</li>
+<li><p>保证字体的可读性。<br><img src="http://upload-images.jianshu.io/upload_images/1289421-6a9f31155fb228e4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>1.避免全大写字体，因为它很难读，需要转化思维。<br>2.避免使用衬线字体，因为个性会产生阅读噪音，不利于用户对数据的理解和思考。<br>3.避免使用斜体。易引起视线疲劳，影响阅读。<br>4.避免使用多种字体。保持风格统一。</p>
+</li>
+<li><p>消除视觉噪音。用户在处理数据时已接收大量的信息，多余的视觉符号容易对用户造成干扰。<br><img src="http://upload-images.jianshu.io/upload_images/1289421-3c199c512bf31db9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>1.避免不必要的视觉元素，无关的边框和底色。<br>2.避免不必要的视觉效果，3D效果，阴影等酷炫效果。</p>
+</li>
+</ul>
+<p>####复杂表格</p>
+<ul>
+<li><p>图表结合。<br><img src="http://upload-images.jianshu.io/upload_images/1289421-e007078dfe96bdbb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>1.在表格内嵌入图表，可实现部分数据可视化。<br>2.在表格旁增加图表，根据表格数据与图表联动。</p>
+</li>
+<li><p>交叉表。交叉报表是报表当中常见的类型，属于基本的报表，是行、列方向都有分组的报表。<br><img src="http://upload-images.jianshu.io/upload_images/1289421-2249a229406b5029.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>在大多数产品中，我们见到的都是直联表（只在行方向有分组），基本可以满足大部分用户。交叉表出现的场景很少，复杂度极高，只要你的系统出现交叉表，很多规则要重新考虑。</p>
+</li>
+</ul>
+<h4 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h4><p>表格的内容其实我才讲了一点点，只是给予各位一点启发，还有大多场景需要各位随机应变了，这里有几点想说的：</p>
+<ul>
+<li><strong>没有绝对的规范，只有相对的规范。</strong>要适应自己产品的场景，选择最适合自己的规范。比如我的产品要考虑交叉表，然而制定对齐规范的文章作者从头到尾没讲到交叉表，我就要重新考虑这个规则的可用性。</li>
+<li><strong>没有完全的规范，只有基本的原则。</strong>任何文章都不可能把所有的情况罗列出来，所以我们要理解规范背后的原则，推导出适应其他场景的规范，要知道很多事“万变不离其宗”。</li>
+<li><strong>没有组合的规范，只有总结的规范。</strong>规范向来都是有理有据，比如“搜索和筛选”功能，很多人会将遇到的筛选的情况罗列出来作为类别，比如“时间筛选器+简易搜索”作为一类，下次遇到“时间筛选+下拉框”就分为一类，其实这是很片面的排列组合规范，而不是总结性的规范。</li>
+</ul>
+<p>彩蛋：在微信公众号idatadesign后台回复“表格”（防止链接失效），可以得到数据表格设计的Axure源文件，希望能造福大众吧～</p>
+<p>参考资料：<br>1.<a href="http://md.maxoxo.design/components/data-tables.html#data-tables-interaction" target="_blank" rel="noopener">http://md.maxoxo.design/components/data-tables.html#data-tables-interaction</a><br>2.<a href="https://design-nation.icons8.com/intro-to-data-tables-design-349f55861803" target="_blank" rel="noopener">https://design-nation.icons8.com/intro-to-data-tables-design-349f55861803</a><br>3.<a href="https://ux.shopify.com/lessons-from-building-mobile-friendly-accessible-data-tables-1e05c6924eaf" target="_blank" rel="noopener">https://ux.shopify.com/lessons-from-building-mobile-friendly-accessible-data-tables-1e05c6924eaf</a><br>4.<a href="https://ant.design/docs/pattern/table-cn" target="_blank" rel="noopener">https://ant.design/docs/pattern/table-cn</a><br>5.<a href="https://www.biaodianfu.com/guidelines-for-designing-tables.html" target="_blank" rel="noopener">https://www.biaodianfu.com/guidelines-for-designing-tables.html</a></p>
+</div><div class="tags"><a href="/tags/数据可视化/">数据可视化</a></div><div class="post-nav"><a class="next" href="/2017/06/25/PMer，还不解锁新技能-卡诺模型/">PMer，还不解锁新技能-卡诺模型</a></div><div id="disqus_thread"><div class="btn_click_load"><button class="disqus_click_btn">阅读评论 「请确保 disqus.com 可以正常加载」</button></div><script>var disqus_shortname = 'idatadesign';
+var disqus_identifier = '2017/07/09/数据表格设计┃从功能、交互和UI进行全方位分析/';
+var disqus_title = '数据表格设计┃从功能、交互和UI进行全方位分析';
+var disqus_url = 'http://angelashaby.github.io/2017/07/09/数据表格设计┃从功能、交互和UI进行全方位分析/';
+$('.btn_click_load').click(function() {
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+  $('.btn_click_load').css('display','none');
+});
+$.ajax({
+  url: 'https://disqus.com/next/config.json',
+  timeout: 3000,
+  type: 'GET',
+  success: (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    $('.btn_click_load').css('display','none');
+  })(),
+  error: function() {
+    $('.btn_click_load').css('display','block');
+  }
+});</script><script id="dsq-count-scr" src="//idatadesign.disqus.com/count.js" async></script></div></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><form class="search-form" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank"><input type="text" name="q" maxlength="20" placeholder="Search"/><input type="hidden" name="sitesearch" value="http://angelashaby.github.io"/></form></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/data/">data</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/design/">design</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/i/">i</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/i/data/">data</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/i/data/design/">design</a></li></ul></li></ul></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/tags/数据分析/" style="font-size: 15px;">数据分析</a> <a href="/tags/数据可视化/" style="font-size: 15px;">数据可视化</a> <a href="/tags/产品/" style="font-size: 15px;">产品</a> <a href="/tags/Hexo/" style="font-size: 15px;">Hexo</a> <a href="/tags/GitHub/" style="font-size: 15px;">GitHub</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/07/09/数据表格设计┃从功能、交互和UI进行全方位分析/">数据表格设计┃从功能、交互和UI进行全方位分析</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/25/PMer，还不解锁新技能-卡诺模型/">PMer，还不解锁新技能-卡诺模型</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/08/【海外2-7K点赞量好文】数据驱动的界面设计/">【海外2.7K点赞量好文】数据驱动的界面设计</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/02/33种经典图表类型总结，轻松玩转数据可视化/">33种经典图表类型总结，轻松玩转数据可视化</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/23/史上最全最实用的数据分析和可视化网站整理，赶快收藏!/">史上最全最实用的数据分析和可视化网站整理，赶快收藏！</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/09/30/hello-world/">Hello World</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-comment-o"> 最近评论</i></div><script type="text/javascript" src="//idatadesign.disqus.com/recent_comments_widget.js?num_items=5&amp;hide_avatars=1&amp;avatar_size=32&amp;excerpt_length=20&amp;hide_mods=1"></script></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> 友情链接</i></div><ul></ul><a href="http://www.example1.com/" title="site-name1" target="_blank">site-name1</a><ul></ul><a href="http://www.example2.com/" title="site-name2" target="_blank">site-name2</a><ul></ul><a href="http://www.example3.com/" title="site-name3" target="_blank">site-name3</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2018 <a href="/." rel="nofollow">idatadesign.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//cdn.bootcss.com/fancybox/3.3.5/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/fancybox/3.3.5/jquery.fancybox.min.css"><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>
